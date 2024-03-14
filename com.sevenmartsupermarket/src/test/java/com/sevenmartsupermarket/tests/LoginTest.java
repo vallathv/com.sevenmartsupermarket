@@ -16,13 +16,10 @@ public class LoginTest extends Base {
 
 	public void verifyLogin() {
 		loginpage = new LoginPage(driver);
-	
 		loginpage.login("Amina", "B000A0GB7Q");
 		homepage = new HomePage(driver);
 		String expectedprofilename = "Amina";   
 		String actualprofilename = homepage.getProfileName();
-		//Screenshot.takescreenshot(driver, "varsha");
-		
 		Assert.assertEquals(actualprofilename, expectedprofilename);
 
 	}
