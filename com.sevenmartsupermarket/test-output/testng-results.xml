@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-14T00:54:40 IST" name="Default suite" finished-at="2024-03-14T00:54:50 IST" duration-ms="9657">
+    <groups>
+    </groups>
+    <test started-at="2024-03-14T00:54:40 IST" name="Default test" finished-at="2024-03-14T00:54:50 IST" duration-ms="9657">
+      <class name="com.sevenmartsupermarket.tests.ManageLocationTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenmartsupermarket.tests.ManageLocationTest@359df09a]" started-at="2024-03-14T00:54:40 IST" name="launchBrowser" finished-at="2024-03-14T00:54:46 IST" duration-ms="5479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="verifyLocationDeletedSuccesfully1()[pri:0, instance:com.sevenmartsupermarket.tests.ManageLocationTest@359df09a]" started-at="2024-03-14T00:54:46 IST" name="verifyLocationDeletedSuccesfully1" finished-at="2024-03-14T00:54:50 IST" duration-ms="4083" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLocationDeletedSuccesfully1 -->
+        <test-method is-config="true" signature="terminatesession(org.testng.ITestResult)[pri:0, instance:com.sevenmartsupermarket.tests.ManageLocationTest@359df09a]" started-at="2024-03-14T00:54:50 IST" name="terminatesession" finished-at="2024-03-14T00:54:50 IST" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLocationDeletedSuccesfully1 status=SUCCESS method=ManageLocationTest.verifyLocationDeletedSuccesfully1()[pri:0, instance:com.sevenmartsupermarket.tests.ManageLocationTest@359df09a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminatesession -->
+      </class> <!-- com.sevenmartsupermarket.tests.ManageLocationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
