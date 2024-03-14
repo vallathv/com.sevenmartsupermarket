@@ -29,7 +29,6 @@ public class ManageLocationTest extends Base {
 		homepage = new HomePage(driver);
 		homepage.clickOnManagelocation();
 		managelocationpage = new ManageLocationPage(driver);
-		
 		managelocationpage.enterLocationInformations(" UNited", "10");
 		String Expected_message = "×\nAlert!\nLocation Created Successfully"; 
 		String actual_message = managelocationpage.getsucsefullmessagetxt();
