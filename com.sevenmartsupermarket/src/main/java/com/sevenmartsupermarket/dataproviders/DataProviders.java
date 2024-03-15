@@ -13,7 +13,7 @@ public class DataProviders {
 		return new Object[][] { { "Tonya", "Jijo" }, { "Garth", "Jijo" }, { "Hank", "Jijo" } };
 	}
 
-	@DataProvider(name = "multilogin")
+	@DataProvider(name = "multilogins")
 	public Object[][] adminlogin()
 
 	{
