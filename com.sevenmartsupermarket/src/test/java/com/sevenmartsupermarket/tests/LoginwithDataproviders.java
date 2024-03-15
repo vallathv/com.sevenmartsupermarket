@@ -15,7 +15,7 @@ public class LoginwithDataproviders extends Base {
 	LoginPage loginpage;
 	HomePage homepage;
 	
-	@Test(dataProvider ="sevenmartsupermarket", dataProviderClass = DataProviders.class )
+	@Test(dataProvider ="multilogin", dataProviderClass = DataProviders.class )
 	
 	public void verifyLoginWithDifferntAdminUsers(String userName, String Password) {
 		loginpage = new LoginPage(driver);
