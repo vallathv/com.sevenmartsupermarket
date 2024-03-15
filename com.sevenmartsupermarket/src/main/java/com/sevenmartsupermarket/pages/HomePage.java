@@ -11,6 +11,9 @@ public class HomePage {
 	@FindBy(xpath = "//div[@class='info']")
 	 private WebElement profileName;
 	
+	@FindBy(xpath="//a[text()='Home']")
+	WebElement homepageicon;
+
 	@FindBy(xpath = "//p[text()='Push Notifications']")
 	WebElement pushNotification;
 	
@@ -36,6 +39,19 @@ WebElement ManageDeliveryboy;
 		this.driver = driver;
 		PageFactory.initElements(driver, this); 
 }
+	
+	
+	
+	
+	public boolean   homepageisDisplayed() {
+		boolean loginstatus =homepageicon.isDisplayed();
+		System.out.println(loginstatus);
+				return loginstatus;
+			
+		
+	}
+	
+	
 	public String getProfileName() {
 		return profileName.getText();
 		
