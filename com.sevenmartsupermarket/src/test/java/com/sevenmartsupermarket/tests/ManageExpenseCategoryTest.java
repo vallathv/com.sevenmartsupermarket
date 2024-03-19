@@ -40,9 +40,9 @@ public class ManageExpenseCategoryTest extends Base {
 		loginpage.login("Amina", "B000A0GB7Q");
 		homepage = new HomePage(driver);
 		homepage.clickOnManageExpence();
-		homepage.clickOnManageExpenceoption();
+		homepage.clickOnManageExpencecateoption();
 		expensecategory=new ExpenseCategoryPage (driver);
-		expensecategory.addnewCategoryInfo("apple");
+		expensecategory.addnewCategoryInfo("Orange");
 		String Expected_message = "×\nAlert!\nExpense Category Created Successfully"; 
 		String actual_message = expensecategory.getsucsefullmessagetxt();
 		Assert.assertEquals(actual_message, Expected_message);

@@ -4,6 +4,8 @@ import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +20,7 @@ public class ManageListExpensePage {
 
 	WebDriver driver;
 	PageUtility pageUtility = new PageUtility(driver);
-	WaitUtility waitutility =new WaitUtility();
-	
+	WaitUtility waitutility = new WaitUtility();
 
 	@FindBy(xpath = "//h1[text()='Add Expense']")
 	WebElement addExpensepageTitle;
@@ -48,7 +49,7 @@ public class ManageListExpensePage {
 	@FindBy(xpath = "//input[@name='userfile']")
 	WebElement fileUpload;
 	@FindBy(xpath = "//button[@name='create']")
-	//@FindBy(xpath = "//button[@class='btn btn-danger']")
+	// @FindBy(xpath = "//button[@class='btn btn-danger']")
 	WebElement savebutton;
 
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
@@ -97,6 +98,8 @@ public class ManageListExpensePage {
 	}
 
 	public void selectExpenseType() {
+		pageUtility = new PageUtility(driver);
+		pageUtility.scrolldown(expenseType);
 		expenseType.click();
 		pageUtility.selectIndex(expenseType, 3);
 
@@ -107,52 +110,39 @@ public class ManageListExpensePage {
 		return amt;
 
 	}
-	
 
-	public void fileUploadpath() throws InterruptedException {
-
-		pageUtility = new PageUtility(driver);
-		pageUtility.scrolldown(fileUpload);
-		Thread.sleep(5000);
+	public void fileUploadpath() {
 		String filePath = "C:\\Users\\USER\\Desktop\\Data.xlsx";
-		File file= new File(filePath);
+		File file = new File(filePath);
 		fileUpload.sendKeys(file.getAbsolutePath());
 	}
-	
 
-	
-	
-	
-
-	public void clickonSave() throws InterruptedException {
-		pageUtility = new PageUtility(driver);
-		pageUtility.scrolldown(savebutton);
-		System.out.println("scrolleddown");
-		Thread.sleep(4000);
+	public void clickonSave() {
+		System.out.println("Scrolling down to save button...");
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", savebutton);
+		System.out.println("Scrolling done.");
+		waitutility.waitForButtonTobeClickable(driver, savebutton, 10);
 		savebutton.click();
-		
-	
+	}
+
+	public String getsucsefullmessagetxt() {
+		String message = successMessge.getText();
+		System.out.println(message);
+		return message;
 
 	}
-	
-	public String  getsucsefullmessagetxt() {
-		String  message=successMessge.getText();
-		System.out.println(message);
-		return message;		
-		
-}
-	
-	public void addExpenseInfo(String amt) throws InterruptedException {
+
+	public void addExpenseInfo(String amt) {
 		clickOnAddExpense();
 		selectUserField();
 		selectCategoryFromDropdown();
 		selectOrderId();
 		selectPurchaseId();
 		selectExpenseType();
-		enterAmount( amt);
+		enterAmount(amt);
+		amount.sendKeys(Keys.TAB);
 		fileUploadpath();
 		clickonSave();
-		
-		
+
 	}
 }
